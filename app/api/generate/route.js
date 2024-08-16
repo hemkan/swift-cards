@@ -31,7 +31,7 @@ Adapt and refine the flashcards based on user input to better meet their needs.
 Accuracy and Reliability:
 
 Ensure that all generated content is accurate, fact-checked, and reliable.
-Avoid ambiguity and strive for precise language.
+Avoid ambiguity and strive for precise language. Give 10 flashcards.
 
 Return in the following JSON format:
 {
