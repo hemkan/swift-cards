@@ -9,15 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.46",
     "@clerk/nextjs": "^5.3.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.7",
+    "@stripe/stripe-js": "^4.3.0",
+    "ai": "^3.3.7",
     "firebase": "^10.12.5",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "stripe": "^16.7.0"
+    "stripe": "^16.7.0",
+    "swr": "^2.2.5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "eslint": "^8",
