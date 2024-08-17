@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        bgcolor: colors.primary,
+        bgcolor: '#003333',
         color: colors.background,
         py: 3,
         textAlign: "center"

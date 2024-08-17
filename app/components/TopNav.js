@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 const colors = {
   primary: "#046865", // Dark Accent
   text: "#FCFFF7", // Light Text Color
-  highlight: "#FFE900" // Highlight color for the button
+  highlight: "#FFE900", // Highlight color for the button
+  bg: "#003333" // Background color for the AppBar
 };
 
 // Define animation variants
@@ -22,13 +23,14 @@ export default function TopNav() {
       <AppBar 
         position="fixed" 
         sx={{ 
-          bgcolor: 'transparent', // Make background transparent
+          bgcolor: colors.bg, // Set background color
           top: 0, 
           left: 0, 
           right: 0, 
           backdropFilter: 'blur(10px)', // Apply blur effect
           boxShadow: 'none', // Optional: Remove default box shadow for a cleaner look
-          borderBottom: `0.5px solid ${colors.text}` // Use text color for the border
+          borderBottom: `0.5px solid ${colors.text}`, // Use text color for the border
+          mb: 2 // Add margin-bottom
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}> {/* Distribute content evenly */}
@@ -50,14 +52,16 @@ export default function TopNav() {
                 variants={textVariants}
                 transition={{ duration: 0.35, delay: 0.2 }} // Slight delay for buttons
               >
-                <Button color="inherit" sx={{ color: colors.text }} href="/sign-in">
-                  Login
+                <Button color="inherit" sx={{ color: colors.text, textTransform: "none", fontSize: "12px" }} href="/sign-in">
+                  Log In
                 </Button>
                 <Button 
                   color="inherit" 
                   sx={{ 
                     backgroundColor: colors.highlight, // Highlight color
-                    color: colors.primary, // Text color
+                    color: colors.primary,
+                    textTransform: "none",
+                    fontSize: "12px", 
                     borderRadius: '5px', // Rounded corners
                     px: 1, // Padding
                     py: 1, // Padding
