@@ -18,9 +18,14 @@ export default function TopNav() {
           Swift-Cards
         </Typography>
         <SignedOut>
-          <SignInButton>
-            <Button color="inherit">Get Started</Button>
-          </SignInButton>
+          <SignedOut>
+            <Button color="inherit" href="/sign-in">
+              Login
+            </Button>
+            <Button color="inherit" href="/sign-up">
+              Sign Up
+            </Button>
+          </SignedOut>
           {/* sign up */}
         </SignedOut>
         <SignedIn>
