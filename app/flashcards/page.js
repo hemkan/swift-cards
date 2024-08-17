@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Box,
@@ -7,35 +7,55 @@ import {
   CardContent,
   Typography,
   Container,
-  Toolbar,
-  Button,
+  Grid,
+  CardActionArea,
 } from "@mui/material";
 import { useUser } from "@clerk/nextjs";
 import { doc, getDoc, setDoc, collection } from "firebase/firestore";
 import db from "../../firebase";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Flashcard() {
   const { isLoaded, isSignedIn, user } = useUser();
   const [flashcards, setFlashcards] = useState([]);
   const router = useRouter();
+
   useEffect(() => {
     async function getFlashcards() {
-      if (!user) return;
-      const docRef = doc(collection(db, "users"), user.id);
+      console.log(isLoaded, isSignedIn, user);
+      if (!isLoaded || !isSignedIn) return;
+      //   user.id -> flashcardSets
+    //  get the user document 
+	  const docRef = doc(collection(db, "users"), user.id);
+	//   get the user document snapshot
       const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const collections = docSnap.data().flashcards || [];
-        setFlashcards(collections);
-      } else {
-        await setDoc(docRef, { flashcards: [] });
+	//   get the data from the user document snapshot
+      const data = docSnap.data();
+      if (data.flashcardSets) {
+        const flashcardSets = data.flashcardSets;
+        console.log(flashcardSets);
+        const flashcards = [];
+        for (const set of flashcardSets) {
+          const setDocRef = doc(collection(docRef, set.name), set.name);
+          const setDocSnap = await getDoc(setDocRef);
+          const setDocData = setDocSnap.data();
+          console.log(setDocData);
+          flashcards.push({ name: set.name, ...setDocData });
+        }
+        setFlashcards(flashcards);
       }
     }
     getFlashcards();
-  }, [user]);
+  }, [isLoaded, isSignedIn, user]);
+
   const handleCardClick = (id) => {
     router.push(`/flashcard?id=${id}`);
   };
+
+  if (!isLoaded || !isSignedIn) {
+    return <Typography>Loading...</Typography>;
+  }
+
   return (
     <Container maxWidth="md">
       <Grid container spacing={3} sx={{ mt: 4 }}>
