@@ -8,6 +8,7 @@ const colors = {
   primary: "#046865", // Dark Accent
   text: "#FCFFF7", // Light Text Color
   highlight: "#FFE900", // Highlight color for the button
+  bg: "#003333", // Background color for the AppBar
 };
 
 // Define animation variants
@@ -22,14 +23,14 @@ export default function TopNav() {
       <AppBar
         position="static"
         sx={{
-          //   bgcolor: "transparent", // Make background transparent
-          bgcolor: "#21A0A0",
+          bgcolor: colors.bg, // Set background color
           top: 0,
           left: 0,
           right: 0,
           backdropFilter: "blur(10px)", // Apply blur effect
           boxShadow: "none", // Optional: Remove default box shadow for a cleaner look
           borderBottom: `0.5px solid ${colors.text}`, // Use text color for the border
+          mb: 2, // Add margin-bottom
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -57,16 +58,22 @@ export default function TopNav() {
               >
                 <Button
                   color="inherit"
-                  sx={{ color: colors.text }}
+                  sx={{
+                    color: colors.text,
+                    textTransform: "none",
+                    fontSize: "12px",
+                  }}
                   href="/sign-in"
                 >
-                  Login
+                  Log In
                 </Button>
                 <Button
                   color="inherit"
                   sx={{
                     backgroundColor: colors.highlight, // Highlight color
-                    color: colors.primary, // Text color
+                    color: colors.primary,
+                    textTransform: "none",
+                    fontSize: "12px",
                     borderRadius: "5px", // Rounded corners
                     px: 1, // Padding
                     py: 1, // Padding

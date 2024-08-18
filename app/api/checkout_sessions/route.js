@@ -11,6 +11,31 @@ export async function POST(req) {
   try {
     const { subscriptionType } = await req.json(); // Adjust according to your request payload
 
+    // Define pricing details based on the subscription type
+    let priceData;
+    switch (subscriptionType.toLowerCase()) {
+      case 'basic':
+        priceData = {
+          name: "Basic Subscription",
+          unitAmount: 500, // Amount in cents ($5.00)
+        };
+        break;
+      case 'pro':
+        priceData = {
+          name: "Pro Subscription",
+          unitAmount: 1000, // Amount in cents ($10.00)
+        };
+        break;
+      case 'premium':
+        priceData = {
+          name: "Premium Subscription",
+          unitAmount: 2000, // Amount in cents ($20.00)
+        };
+        break;
+      default:
+        return NextResponse.json({ error: 'Invalid subscription type' }, { status: 400 });
+    }
+
     const params = {
       mode: "subscription",
       payment_method_types: ["card"],
@@ -19,9 +44,9 @@ export async function POST(req) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: subscriptionType === 'basic' ? "Basic Subscription" : "Pro Subscription",
+              name: priceData.name,
             },
-            unit_amount: subscriptionType === 'basic' ? 500 : 1000, // Amount in cents
+            unit_amount: priceData.unitAmount,
             recurring: {
               interval: "month",
               interval_count: 1,

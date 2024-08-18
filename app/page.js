@@ -6,7 +6,6 @@ import Head from "next/head";
 import GenerateFlashcards from "./components/GenerateFlashcards";
 import HomePage from "./components/HomePage";
 import TopNav from "./components/TopNav";
-import TechStackSection from "./components/TechStackSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Loading from "./components/Loading";
@@ -55,7 +54,7 @@ export default function Home() {
         <meta name="description" content="Create flashcards from text" />
       </Head>
       <TopNav />
-      <HeroSection />
+      {!isSignedIn && <HeroSection />} {/* Conditionally render HeroSection */}
       <Container sx={{ py: 8 }}>
         {isSignedIn ? (
           <GenerateFlashcards />
@@ -67,7 +66,6 @@ export default function Home() {
           />
         )}
       </Container>
-      <TechStackSection />
       <Footer />
     </Box>
   );

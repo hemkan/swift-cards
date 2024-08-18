@@ -24,7 +24,7 @@ export default function FeaturesSection() {
   return (
     <Box sx={{ py: 8, textAlign: "center" }}>
       <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
-        Key Features
+        Features
       </Typography>
       <Grid container spacing={3} justifyContent="center">
         {featureItems.map((feature, index) => (
@@ -33,10 +33,11 @@ export default function FeaturesSection() {
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
+              style={{ display: 'flex', flexDirection: 'column', height: '100%' }} // Flex container
             >
               <Box
                 sx={{
-                  p: 2,
+                  p: 3, // Increased padding for better spacing
                   border: '1px solid',
                   borderColor: 'grey.300',
                   borderRadius: 2,
@@ -44,15 +45,19 @@ export default function FeaturesSection() {
                   bgcolor: "#fff",
                   boxShadow: 2,
                   transition: 'box-shadow 0.3s ease-in-out',
-                  '&:hover': {
-                    boxShadow: 6
-                  }
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between', // Space out items to ensure equal height
+                  height: '100%', // Full height
+                  minHeight: '200px' // Minimum height to ensure uniformity
                 }}
               >
-                <Typography variant="h6" gutterBottom sx={{ mb: 2 }}>
-                  {feature.title}
-                </Typography>
-                <Typography>{feature.description}</Typography>
+                <div>
+                  <Typography variant="h6" gutterBottom sx={{ mb: 2 }}>
+                    {feature.title}
+                  </Typography>
+                  <Typography>{feature.description}</Typography>
+                </div>
               </Box>
             </motion.div>
           </Grid>

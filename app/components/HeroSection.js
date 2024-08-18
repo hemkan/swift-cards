@@ -60,7 +60,7 @@ export default function HeroSection() {
         },
       }}
     >
-      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2 }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
         <Typography
           variant="h2"
           gutterBottom
@@ -68,10 +68,10 @@ export default function HeroSection() {
             animation: `${fadeIn} 1s ease-in`
           }}
         >
-          Welcome to Swift-Cards
+          Swift-Cards the new way to make your flashcards.
         </Typography>
         <Typography
-          variant="h5"
+          variant="h6"
           gutterBottom
           sx={{ 
             mb: 4,
@@ -79,7 +79,8 @@ export default function HeroSection() {
             animation: `${fadeIn} ease-in 0.5s`
           }}
         >
-          Elevate Learning Beyond Flashcards
+         Created with Next.js, React, and AI Integration.
+         Crafted with care, powered by innovation.
         </Typography>
         {!isSignedIn && (
           <Button
@@ -88,19 +89,20 @@ export default function HeroSection() {
               mt: 4,
               bgcolor: colors.background,
               color: colors.primary,
-              fontSize: '0.7rem',
-              fontWeight: 'bold',
-              padding: '1rem 1rem',
+              textTransform: "none" ,
+              fontSize: '0.9rem',
+              padding: '0.47rem',
+              borderRadius: '11px',
               '&:hover': {
                 bgcolor: colors.hoverBackground, // Change background color on hover
                 color: colors.primary, // Ensure text color remains the same
-                transform: 'scale(1.05)',
+                textTransform: "none" ,
               },
               transition: 'transform 0.3s ease',
             }}
             href="/sign-up"
           >
-            Get Started
+            Get Started for free → 
           </Button>
         )}
       </Container>
