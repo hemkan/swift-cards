@@ -7,7 +7,7 @@ import {
   Grid,
 } from "@mui/material";
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const CreateSet = () => {
   const router = useRouter();
