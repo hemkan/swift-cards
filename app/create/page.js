@@ -11,9 +11,35 @@ import {
 import React from "react";
 import { useRouter } from "next/navigation";
 import TopNav from "../components/TopNav";
+import { useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
 
 const CreateSet = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  if (loading) {
+    return (
+      <Box
+        height="100vh"
+        width="100vw"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        sx={{ backgroundImage: "linear-gradient(#EFEFEF, #FCFFF7)" }}
+      >
+        <ThreeDots
+          visible={true}
+          height="100"
+          width="100"
+          color="#000"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </Box>
+    );
+  }
 
   return (
     <Box
@@ -81,7 +107,10 @@ const CreateSet = () => {
                   display: "flex",
                   flexDirection: "column",
                 }}
-                onClick={() => router.push("/generate")}
+                onClick={() => {
+                  router.push("/generate");
+                  setLoading(true);
+                }}
               >
                 <CardContent
                   sx={{
@@ -128,7 +157,10 @@ const CreateSet = () => {
                   display: "flex",
                   flexDirection: "column",
                 }}
-                onClick={() => router.push("/generate")}
+                onClick={() => {
+                  router.push("/generate");
+                  setLoading(true);
+                }}
               >
                 <CardContent
                   sx={{
