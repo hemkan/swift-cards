@@ -1,15 +1,15 @@
 "use client";
 import { Box, Typography, Button, Container } from "@mui/material";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useUser } from "@clerk/nextjs";
-import { keyframes } from '@emotion/react';
+import { keyframes } from "@emotion/react";
 
 // Color palette
 const colors = {
   primary: "#046865", // Dark Accent
   background: "#FCFFF7", // Light Background
   hoverBackground: "#d3d3d3", // Light grey color for hover effect
-  imageOverlay: "rgba(0, 0, 0, 0.3)" // Semi-transparent overlay color
+  imageOverlay: "rgba(0, 0, 0, 0.3)", // Semi-transparent overlay color
 };
 
 // Define animation keyframes
@@ -36,36 +36,36 @@ export default function HeroSection() {
       sx={{
         bgcolor: colors.primary,
         color: colors.background,
-        height: '100vh', // Full viewport height
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
         textAlign: "center",
-        position: 'relative',
+        position: "relative",
         animation: `${fadeIn} 1s ease-in`,
-        backgroundImage: 'url(/Notes.jpg)', // Replace with your image path
-        backgroundSize: 'cover', // Cover the entire area
-        backgroundPosition: 'center', // Center the image
-        backgroundRepeat: 'no-repeat', // Do not repeat the image
-        '&::before': {
+        backgroundImage: "url(/Notes.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        "&::before": {
           content: '""',
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: colors.imageOverlay, // Overlay color
-          zIndex: 1, // Ensure overlay is above the background image
+          backgroundColor: colors.imageOverlay,
+          zIndex: 1,
         },
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
         <Typography
           variant="h2"
           gutterBottom
           sx={{
-            animation: `${fadeIn} 1s ease-in`
+            animation: `${fadeIn} 1s ease-in`,
           }}
         >
           Swift-Cards the new way to make your flashcards.
@@ -73,14 +73,14 @@ export default function HeroSection() {
         <Typography
           variant="h6"
           gutterBottom
-          sx={{ 
+          sx={{
             mb: 4,
             fontWeight: 300,
-            animation: `${fadeIn} ease-in 0.5s`
+            animation: `${fadeIn} ease-in 0.5s`,
           }}
         >
-         Created with Next.js, React, and AI Integration.
-         Crafted with care, powered by innovation.
+          Created with Next.js, React, and AI Integration. Crafted with care,
+          powered by innovation.
         </Typography>
         {!isSignedIn && (
           <Button
@@ -89,26 +89,26 @@ export default function HeroSection() {
               mt: 4,
               bgcolor: colors.background,
               color: colors.primary,
-              textTransform: "none" ,
-              fontSize: '0.9rem',
-              padding: '0.47rem',
-              borderRadius: '11px',
-              '&:hover': {
+              textTransform: "none",
+              fontSize: "0.9rem",
+              padding: "0.47rem",
+              borderRadius: "11px",
+              "&:hover": {
                 bgcolor: colors.hoverBackground, // Change background color on hover
                 color: colors.primary, // Ensure text color remains the same
-                textTransform: "none" ,
+                textTransform: "none",
               },
-              transition: 'transform 0.3s ease',
+              transition: "transform 0.3s ease",
             }}
             href="/sign-up"
           >
-            Get Started for free → 
+            Get Started for free →
           </Button>
         )}
       </Container>
       <Box
         sx={{
-          position: 'absolute',
+          position: "absolute",
           bottom: 100, // Move the arrow up
           animation: `${bounce} 1.5s infinite`,
           color: colors.background,

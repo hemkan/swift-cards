@@ -6,7 +6,7 @@ import PricingCard from "./PricingCard"; // Import the PricingCard component
 
 const colors = {
   primary: "#046865", // Dark Accent
-  background: "#FCFFF7" // Light Background
+  background: "#FCFFF7", // Light Background
 };
 
 // Define animation variants
@@ -21,7 +21,7 @@ export default function HomePage({ handleCheckout, loadingType, showPricing }) {
       initial="hidden"
       animate="visible"
       variants={variants}
-      transition={{ duration: 1 }} // Duration for the fade-in effect
+      transition={{ duration: 1 }}
     >
       <Box sx={{ my: 4, textAlign: "center" }}>
         {showPricing && (
@@ -31,7 +31,7 @@ export default function HomePage({ handleCheckout, loadingType, showPricing }) {
               Pricing
             </Typography>
             <Grid container spacing={3} justifyContent="center">
-              <PricingCard 
+              <PricingCard
                 type="Basic"
                 price="$5 / month"
                 description="Access to basic flashcard features and limited storage."
@@ -43,7 +43,7 @@ export default function HomePage({ handleCheckout, loadingType, showPricing }) {
                 handleCheckout={handleCheckout}
                 loadingType={loadingType}
               />
-              <PricingCard 
+              <PricingCard
                 type="Pro"
                 price="$10 / month"
                 description="Unlimited flashcards and storage with priority support."
@@ -56,7 +56,7 @@ export default function HomePage({ handleCheckout, loadingType, showPricing }) {
                 handleCheckout={handleCheckout}
                 loadingType={loadingType}
               />
-              <PricingCard 
+              <PricingCard
                 type="Premium"
                 price="$20 / month"
                 description="All Pro features plus team collaboration and advanced analytics."

@@ -96,7 +96,7 @@ export default function GenerateFlashcards() {
       handleCloseDialog();
       window.scrollTo(0, 0);
     } finally {
-      router.push("/flashcards");
+      router.push("/dashboard");
     }
   };
 
