@@ -23,14 +23,13 @@ export default function TopNav() {
       <AppBar
         position="static"
         sx={{
-          bgcolor: colors.bg, // Set background color
+          bgcolor: colors.bg,
           top: 0,
           left: 0,
           right: 0,
-          backdropFilter: "blur(10px)", // Apply blur effect
-          boxShadow: "none", // Optional: Remove default box shadow for a cleaner look
-          borderBottom: `0.5px solid ${colors.text}`, // Use text color for the border
-          mb: 2, // Add margin-bottom
+          backdropFilter: "blur(10px)",
+          boxShadow: "none",
+          borderBottom: `0.5px solid ${colors.text}`,
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -40,7 +39,7 @@ export default function TopNav() {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            transition={{ duration: 0.35 }} // Duration for the fade-in effect
+            transition={{ duration: 0.35 }}
           >
             <Typography variant="h6" sx={{ color: colors.text }}>
               Swift-Cards
@@ -54,7 +53,7 @@ export default function TopNav() {
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
-                transition={{ duration: 0.35, delay: 0.2 }} // Slight delay for buttons
+                transition={{ duration: 0.35, delay: 0.2 }}
               >
                 <Button
                   color="inherit"
@@ -70,16 +69,16 @@ export default function TopNav() {
                 <Button
                   color="inherit"
                   sx={{
-                    backgroundColor: colors.highlight, // Highlight color
+                    backgroundColor: colors.highlight,
                     color: colors.primary,
                     textTransform: "none",
                     fontSize: "12px",
-                    borderRadius: "5px", // Rounded corners
-                    px: 1, // Padding
-                    py: 1, // Padding
+                    borderRadius: "5px",
+                    px: 1,
+                    py: 1,
                     "&:hover": {
-                      backgroundColor: "#FFD700", // Hover effect
-                      boxShadow: "0 4px 8px rgba(0,0,0,0.2)", // Shadow effect on hover
+                      backgroundColor: "#FFD700",
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
                     },
                   }}
                   href="/sign-up"
@@ -93,9 +92,9 @@ export default function TopNav() {
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
-                transition={{ duration: 0.35, delay: 0.4 }} // Slight delay for UserButton
+                transition={{ duration: 0.35, delay: 0.4 }}
               >
-                <UserButton />
+                <UserButton userProfileUrl="/user-profile" />
               </motion.div>
             </SignedIn>
           </Box>

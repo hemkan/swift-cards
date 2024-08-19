@@ -14,7 +14,11 @@ export default function Generate() {
       }}
     >
       <TopNav />
-      <GenerateFlashcards />
+      <GenerateFlashcards
+        sx={{
+          mt: 2,
+        }}
+      />
     </Box>
   );
 }

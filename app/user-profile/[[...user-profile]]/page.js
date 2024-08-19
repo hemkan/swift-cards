@@ -15,7 +15,7 @@ const UserProfilePage = () => {
       }}
     >
       <TopNav />
-      <Container maxWidth="md" sx={{ flexGrow: 1 }}>
+      <Container maxWidth="md" sx={{ flexGrow: 1, mt: 2 }}>
         <UserProfile path="/user-profile" />
       </Container>
     </Box>

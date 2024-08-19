@@ -36,6 +36,7 @@ export default function Flashcard() {
   const [isTextFieldVisible, setTextFieldVisible] = useState(false);
   const [filteredFlashcards, setFilteredFlashcards] = useState([]);
   const textFieldRef = React.useRef(null);
+  const [isScreenLoading, setIsScreenLoading] = useState(false);
 
   const handleOpenUserMenu = (event, flashcard) => {
     event.stopPropagation();
@@ -107,6 +108,7 @@ export default function Flashcard() {
   }, [isLoaded, isSignedIn, user]);
 
   const handleCardClick = (id) => {
+    setIsScreenLoading(true);
     router.push(`/flashcard?id=${id}`);
   };
 
@@ -141,7 +143,7 @@ export default function Flashcard() {
     await getFlashcards();
   };
 
-  if (!isLoaded || !isSignedIn) {
+  if (!isLoaded || !isSignedIn || isScreenLoading) {
     return (
       <Box
         height="100vh"
@@ -175,7 +177,7 @@ export default function Flashcard() {
       }}
     >
       <TopNav />
-      <Container maxWidth="md">
+      <Container maxWidth="md" mt={2}>
         <Box
           display="flex"
           flexDirection={"row"}
@@ -211,7 +213,7 @@ export default function Flashcard() {
             >
               <IconButton
                 onClick={() => {
-                  router.push("/create-flashcard");
+                  router.push("/generate");
                 }}
                 bgcolor={"#FFE900"}
                 sx={{
