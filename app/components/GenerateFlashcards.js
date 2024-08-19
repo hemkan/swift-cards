@@ -119,7 +119,19 @@ export default function GenerateFlashcards() {
       }
 
       const data = await response.json();
-      setFlashcards(data);
+
+      const updatedFlashcards = [...flashcards, ...data];
+      setFlashcards(updatedFlashcards);
+
+      setSelectedFlashcards((prevSelected) => {
+        const newSelected = new Set();
+        updatedFlashcards.forEach((fc) => {
+          if (prevSelected.has(fc)) {
+            newSelected.add(fc);
+          }
+        });
+        return newSelected;
+      });
     } catch (error) {
       console.error("Error generating flashcards:", error);
       setAlert(
@@ -289,7 +301,7 @@ export default function GenerateFlashcards() {
                   <Grid item xs={12} sm={6} md={4} key={index}>
                     <Card
                       sx={{
-                        height: "300px",
+                        height: "250px",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
