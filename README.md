@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/11e9468c-3dff-46c1-8e02-f4a472c4f49b)
+
 # Swift-Cards
 
 Welcome to **Swift-Cards** – a tool designed to create flashcards using AI. Swift-Cards simplifies the process of turning your notes into easily digestible flashcards. While we are still working on integrating all features and services, we aim to provide a streamlined experience for note management and learning.
