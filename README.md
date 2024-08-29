@@ -38,7 +38,7 @@ To install and run Swift-Cards locally, follow these steps:
    git clone https://github.com/your-username/swift-cards.git
 
 2. **Navigate to the project directory**
-cd gourmetguide
+cd swift-cards
 
 3. **Install dependencies:**
 npm install
@@ -48,4 +48,4 @@ npm install
 5. **Run the development server:**
 npm run dev
 
-We welcome contributions to enhance GourmetGuide. Please feel free to open issues or submit pull requests. Together, we can make studying even more fun and accessible!
+We welcome contributions to enhance Swift Cards. Please feel free to open issues or submit pull requests. Together, we can make studying even more fun and accessible!
