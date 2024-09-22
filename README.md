@@ -1,34 +1,34 @@
-![image](https://github.com/user-attachments/assets/11e9468c-3dff-46c1-8e02-f4a472c4f49b)
-
 # Swift-Cards
 
-Welcome to **Swift-Cards** – a tool designed to create flashcards using AI. Swift-Cards simplifies the process of turning your notes into easily digestible flashcards. While we are still working on integrating all features and services, we aim to provide a streamlined experience for note management and learning.
+Swift-Cards is an AI-powered flashcard creation tool designed to simplify note-taking and studying. With an intuitive interface and seamless integration of AI, Swift-Cards turns your notes into easy-to-review flashcards. As we continue to enhance the platform, we aim to provide an efficient and user-friendly experience for learning and study management.
 
 [Live Demo](https://swift-cards.vercel.app/)
 
-## Features
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Clerk](https://img.shields.io/badge/Clerk-3B82F6?style=for-the-badge&logo=clerk&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
 
-- **AI-Generated Flashcards**: Create flashcards using AI to make your notes easier to study and review.
-- **Account Management and Authentication**: Utilize Clerk for secure account management and authentication.
-- **Mock Payment Plans**: Implemented Stripe for creating mock payment plans to learn more about the Stripe API. Currently, all payment plans are mockups.
+## Key Features
+
+- **AI-Generated Flashcards**: Easily create flashcards from your notes using AI. Swift-Cards simplifies complex information into concise, digestible flashcards to streamline studying.
+- **Account Management and Authentication**: Integrated with Clerk for secure user authentication and account management, ensuring a smooth and safe user experience.
+- **Mock Payment Plans**: Learn more about Stripe’s API through mock payment plan implementations. Currently, all payment plans are simulated for educational purposes.
 
 ## Important Notice
 
-We're currently using Firebase's test version for authentication and data management. This setup might not be usable in the future unless we receive sufficient interest and support from users. If you find Swift-Cards useful, please let us know!
+Swift-Cards is currently utilizing Firebase's test environment for authentication and data management. If there's enough interest and support from users, we may scale the platform and enhance its functionality in the future. Please share your feedback with us!
 
 ## Future Plans
 
-- **RAG Integration**: We are working on integrating Retrieval-Augmented Generation (RAG). The implementation is in progress, and we aim to have it functional soon.
-- **Flashcards and API Integration**: We plan to resolve issues with flashcard generation and API calls. There was a conflict with the system prompt, which we suspect might be an internal issue. We will address this based on user feedback.
+- **RAG Integration**: We're working on integrating Retrieval-Augmented Generation (RAG) to improve the relevance of flashcard content based on user queries. The integration is in progress, and we hope to release it soon.
+- **API and Flashcard Generation Improvements**: We are addressing issues with flashcard generation and API conflicts, particularly with the system prompt. Your feedback will help us improve these features.
 
 ## Getting Started
 
-To install and run Swift-Cards locally, follow these steps:
-
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) installed on your machine.
-- [Git](https://git-scm.com/) installed on your machine.
+Ensure you have [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) installed on your system.
 
 ### Installation
 
@@ -36,16 +36,48 @@ To install and run Swift-Cards locally, follow these steps:
 
    ```bash
    git clone https://github.com/your-username/swift-cards.git
+   ```
 
-2. **Navigate to the project directory**
-cd swift-cards
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd swift-cards
+   ```
 
 3. **Install dependencies:**
-npm install
 
-4. **Create a .env.local file**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+4. **Create a `.env.local` file in the root directory with the necessary environment variables:**
+
+   ```env
+   NEXT_PUBLIC_API_URL=https://api.example.com
+   NEXT_PUBLIC_API_KEY=your_api_key
+   ```
 
 5. **Run the development server:**
-npm run dev
 
-We welcome contributions to enhance Swift Cards. Please feel free to open issues or submit pull requests. Together, we can make studying even more fun and accessible!
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+   - You should see the Swift-Cards interface, where you can start generating flashcards.
+   - Try creating flashcards by inputting a topic, such as "World History" or "JavaScript basics."
+
+## Learn More
+
+To learn more about Swift-Cards and the technologies used, check out the following resources:
+
+- [Clerk Documentation](https://clerk.dev/docs) - Learn more about user authentication and account management with Clerk.
+- [Stripe Documentation](https://stripe.com/docs) - Explore Stripe's payment platform and API for processing transactions.
+- [Next.js Documentation](https://nextjs.org/docs) - Get familiar with Next.js features and APIs for building fast web applications.
+- [Firebase Documentation](https://firebase.google.com/docs) - Read about Firebase's real-time database, authentication, and other backend services.
+- [Vercel Deployment Documentation](https://vercel.com/docs) - Find out how to deploy your Next.js apps with Vercel.
