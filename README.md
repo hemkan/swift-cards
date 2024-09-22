@@ -7,6 +7,8 @@ Swift-Cards is an AI-powered flashcard creation tool designed to simplify note-t
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Clerk](https://img.shields.io/badge/Clerk-3B82F6?style=for-the-badge&logo=clerk&logoColor=white)
 ![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-007ACC?style=for-the-badge&logo=data:image/svg+xml;base64,YOUR_BASE64_ENCODED_LOGO)
+![Llama 3.1-8B](https://img.shields.io/badge/Llama%203.1--8B-AI%20Model-brightgreen?style=for-the-badge)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
 
 ## Key Features
